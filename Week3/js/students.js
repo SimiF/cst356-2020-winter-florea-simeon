@@ -1,6 +1,22 @@
-var students_data = '{"students_data": [{"student_id":2221243, "email_address":"b.morphew@lab.edu"}, {"student_id":2229612, "email_address":"d.shockley@lab.edu"}, {"student_id":2229183, "email_address":"c.hoch@lab.edu"}, {"student_id":2229463, "email_address":"l.pickerel@lab.edu"}, {"student_id":2226291, "email_address":"m.scouten@lab.edu"}]}'
+var students_data = '{"studentsData":[{"studentId":"2221243", "emailAddress":"b.morphew@lab.edu"},{"studentId":"2229612", "emailAddress":"d.shockley@lab.edu"},{"studentId":"2229183", "emailAddress":"c.hoch@lab.edu"},{"studentId":"2229463", "emailAddress":"l.pickerel@lab.edu"},{"studentId":"2226291", "emailAddress":"m.scouten@lab.edu"}]}'
 
-function returnData(data)
-{
-    return JSON.parse(data);
+function getData() {
+    return JSON.parse(students_data);
 }
+
+function displayProducts(studentData) {
+    var tableList = "";
+    for (i = 0; i < studentData.length; i++) {
+        var studentId = studentData[i].studentId;
+        var emailAddress = studentData[i].emailAddress;
+        tableList += "<tr><td>" + studentId + "</td><td>" + emailAddress + "</td></tr>";
+
+        document.getElementById("student_data").innerHTML = tableList;
+    }
+}
+
+function populateTable() {
+    var data = getData();
+    displayProducts(data.studentsData);
+}
+
