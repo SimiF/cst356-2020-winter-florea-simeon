@@ -1,0 +1,56 @@
+.table_heading {
+    background-color: lightblue;
+    text-transform: uppercase;
+    border-left-color: blue; 
+    border-left-style: solid;
+    border-left-width: 15px;
+    padding: 20px 20px 20px 20px;
+}
+
+#main_header {
+    background-color:bisque;
+    text-transform: uppercase;
+    border-left-color: red; 
+    border-left-style: solid;
+    border-left-width: 15px;
+    padding: 20px 20px 20px 20px;
+}
+
+p {
+    background-color: lightgray;
+    padding: 10px 10px 10px 10px;
+    font-size: 20px;
+    font: 1em sans-serif;;
+}
+
+/*
+The following css is inspired from
+https://www.w3schools.com/css/css_navbar.asp
+*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    float: left;
+    background-color: lightgray;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    padding: 8px;
+    color: red;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: black;
+    color: greenyellow;
+}
