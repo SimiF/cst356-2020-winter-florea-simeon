@@ -3,6 +3,7 @@
     <head>
         <title>Instructor Information</title>
         <link rel="stylesheet" href="style.css">
+        <script src="js/instructors.js"></script>
     </head>
 
     <body>
@@ -17,36 +18,18 @@
 
         <h3 class="table_heading">Table 1: List of instructors.</h3>
         <table>
-            <tr>
-                <th>First Name</th>
-                <th>Middle Initial</th>
-                <th>Last Name</th>
-            </tr>
-            <tr>
-                <th>Marcos</th>
-                <th>D</th>
-                <th>Monroig</th>
-            </tr>
-            <tr>
-                <th>Myrta</th>
-                <th>S</th>
-                <th>Merten</th>
-            </tr>
-            <tr>
-                <th>Marco</th>
-                <th>I</th>
-                <th>Lovell</th>
-            </tr>
-            <tr>
-                <th>Janiece</th>
-                <th>A</th>
-                <th>Kroeker</th>
-            </tr>
-            <tr>
-                <th>Hilario</th>
-                <th>M</th>
-                <th>Rose</th>
-            </tr>
+           <thead>
+                <tr>
+                    <td>First Name</td>
+                    <td>Middle Initial</td>
+                    <td>Last Name</td>
+                </tr>
+           </thead>
+           <tbody id="instructor_data">
+
+           </tbody>
         </table>
+
+        <script>populateTable()</script>
     </body>
 </html>
