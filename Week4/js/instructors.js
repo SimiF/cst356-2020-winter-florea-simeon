@@ -1,10 +1,10 @@
 var instructorData = '{"instructorData":[{"firstName":"Marcos", "middleI":"D", "lastName":"Monroig"}, {"firstName":"Myrta", "middleI":"S", "lastName":"Merten"}, {"firstName":"Marco", "middleI":"I", "lastName":"Lovell"}, {"firstName":"Janiece", "middleI":"A", "lastName":"Kroeker"}, {"firstName":"Hilario", "middleI":"M", "lastName":"Rose"}]}'
 
-function getData() {
+function getDataInstructors() {
     return JSON.parse(instructorData);
 }
 
-function displayProducts(instructorData) {
+function displayProductsInstructors(instructorData) {
     var tableList = "";
     for (i = 0; i < instructorData.length; i++) {
         var firstName = instructorData[i].firstName;
@@ -16,8 +16,8 @@ function displayProducts(instructorData) {
     }
 }
 
-function populateTable() {
-    var data = getData();
-    displayProducts(data.instructorData);
+function populateTableInstructors() {
+    var data = getDataInstructors();
+    displayProductsInstructors(data.instructorData);
 }
 
