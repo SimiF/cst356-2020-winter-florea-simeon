@@ -17,8 +17,11 @@
                     <td>Email Address</td>
                 </tr>
             </thead>       
-            <tbody id="student_data">
-
+            <tbody>
+                <tr v-for="student in students" v-bind:key="student">
+                    <td>{{ student.studentId }}</td>
+                    <td>{{ student.emailAddress }}</td>                
+                </tr>
             </tbody>
         </table>
        
@@ -28,8 +31,22 @@
 
 <script>
 export default {
-    name: 'Students'
-}
+        name: 'Students',
+        mounted() {
+            this.students = getStudents();
+        },
+        data () {
+            return {
+                students: []
+            }
+        }
+    }
+
+    function getStudents() {
+        return JSON.parse(students);
+    }
+
+    var students = '[{"studentId":"2221243", "emailAddress":"b.morphew@lab.edu"},{"studentId":"2229612", "emailAddress":"d.shockley@lab.edu"},{"studentId":"2229183", "emailAddress":"c.hoch@lab.edu"},{"studentId":"2229463", "emailAddress":"l.pickerel@lab.edu"},{"studentId":"2226291", "emailAddress":"m.scouten@lab.edu"}]'
 </script>
 
 <style>

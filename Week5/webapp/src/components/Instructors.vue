@@ -11,13 +11,17 @@
         <table>
            <thead>
                 <tr>
-                    <td>First Name</td>
-                    <td>Middle Initial</td>
-                    <td>Last Name</td>
+                    <th>First Name</th>
+                    <th>Middle Initial</th>
+                    <th>Last Name</th>
                 </tr>
            </thead>
-           <tbody id="instructor_data">
-
+           <tbody>
+               <tr v-for="instructor in instructors" v-bind:key="instructor">
+                    <td>{{ instructor.firstName }}</td>
+                    <td>{{ instructor.middleI }}</td>                
+                    <td>{{ instructor.lastName }}</td>
+                </tr>
            </tbody>
         </table>
      
@@ -26,9 +30,23 @@
 </template>
 
 <script>
-export default {
-    name: 'Instructors'
-}
+ export default {
+        name: 'Instructors',
+        mounted() {
+            this.instructors = getStudents();
+        },
+        data () {
+            return {
+                instructors: []
+            }
+        }
+    }
+
+    function getStudents() {
+        return JSON.parse(instructors);
+    }
+
+    var instructors = '[{"firstName":"Marcos", "middleI":"D", "lastName":"Monroig"}, {"firstName":"Myrta", "middleI":"S", "lastName":"Merten"}, {"firstName":"Marco", "middleI":"I", "lastName":"Lovell"}, {"firstName":"Janiece", "middleI":"A", "lastName":"Kroeker"}, {"firstName":"Hilario", "middleI":"M", "lastName":"Rose"}]'
 </script>
 
 <style>
