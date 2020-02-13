@@ -3,6 +3,7 @@
         <span v-on:click='goToHome'>Home</span>
         <span v-on:click='goToInstructors'>Instructors</span>
         <span v-on:click='goToStudents'>Students</span>
+        <span v-on:click='goToLogin'>Login</span>
     </div>
 </template>
 
@@ -18,6 +19,9 @@
       },
       goToStudents: function() {
         this.$router.push({ path: 'Students' })
+      },
+      goToLogin: function() {
+        this.$router.push({ path:  'Login' })
       }
     }
   }
