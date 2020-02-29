@@ -11,17 +11,16 @@
                 </thead>
                 <tbody>
                     <tr v-for="student in students" :key="student.StudentId">
-                        <td>{{ student.StudentId }}</td>
-                        <td>${{ student.Email }}</td>
-                        <td>
-                            <button v-on:click='displayStudentDetails(student.StudentId)'>Details</button>
-                            <button v-on:click='displayUpdateStudent(student.StudentId)'>Update</button>
-                            <button v-on:click='deleteStudent(student.StudentId)'>Delete</button>
-                        </td>
+                        <td>{{ student.studentId }}</td>
+                        <td>{{ student.emailAddress }}</td>                        
                     </tr>
                 </tbody>
             </table>
 
+            <button v-on:click='displayStudentDetails(student.StudentId)'>Details</button>
+            <button v-on:click='displayUpdateStudent(student.StudentId)'>Update</button>
+            <button v-on:click='deleteStudent(student.StudentId)'>Delete</button>
+                        
             <button id='addBtn' v-on:click='displayAddStudent()'>Add Student</button>
         </div>
 
@@ -30,11 +29,11 @@
         
             <form>
                 <div class='form-entry'>
-                    Name: <input type='text' v-model='StudentId'/>
+                    Student ID: <input type='text' v-model='StudentId'/>
                 </div>
 
                 <div class='form-entry'>
-                    Price: <input type='text' v-model='Email'/>
+                    Email: <input type='text' v-model='Email'/>
                 </div>              
 
                 <div class='form-entry'>
